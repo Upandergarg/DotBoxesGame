@@ -1,0 +1,161 @@
+/* --- Color & Font Setup --- */
+:root {
+  --color-bg: #1a1a2e;
+  --color-card: #16213e;
+  --color-text: #e94560;
+  --color-text-light: #f1f6f9;
+  --color-dot: #0f3460;
+  --color-p1: #f9ed69;
+  --color-p1-light: rgba(249, 237, 105, 0.2);
+  --color-p2: #3ec1d3;
+  --color-p2-light: rgba(62, 193, 211, 0.2);
+  --color-tie: #f08a5d;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --- Background Video --- */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(5px) brightness(0.6);
+}
+
+/* --- Main App Container --- */
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  color: var(--color-text-light);
+}
+
+/* --- Start Screen --- */
+.start-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.start-menu-card {
+  background: var(--color-card);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.start-menu-card h1 {
+  color: var(--color-text);
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.start-menu-card p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.select-container select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-dot);
+  background: var(--color-bg);
+  color: var(--color-text-light);
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.start-button, .menu-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--color-text);
+  color: var(--color-card);
+}
+
+.start-button:hover, .menu-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+}
+
+/* --- Game Container --- */
+.game-container {
+  background: var(--color-card);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.game-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  height: 35px;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.player-text-1 { color: var(--color-p1); }
+.player-text-2 { color: var(--color-p2); }
+.player-text-tie { color: var(--color-tie); }
+
+.scores .active {
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
+}
+
+.board-container {
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+/* --- SVG Element Styles --- */
+.dot { fill: var(--color-dot); }
+
+.line {
+  stroke-width: 6px;
+  stroke-linecap: round;
+  transition: stroke 0.2s;
+}
+
+.player-line-1 { stroke: var(--color-p1); }
+.player-line-2 { stroke: var(--color-p2); }
+
+.box {
+  transition: fill 0.3s ease;
+}
+
+.player-box-1 { fill: var(--color-p1-light); }
+.player-box-2 { fill: var(--color-p2-light); }
+
+.clickable-area {
+  fill: transparent;
+  cursor: pointer;
+}
